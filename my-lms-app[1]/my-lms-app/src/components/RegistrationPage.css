@@ -4,7 +4,7 @@
   align-items: center;
   min-height: 100vh;
   padding: 20px;
-  background: linear-gradient(135deg, var(--primary-brand-color) 0%, var(--primary-color) 50%, var(--secondary-color) 100%);
+  background: linear-gradient(135deg, #1e90ff 0%, #0066cc 25%, #6a0dad 50%, #c71585 75%, #ff1493 100%);
   position: fixed;
   top: 0;
   left: 0;
@@ -20,7 +20,7 @@
   background: var(--background-card);
   padding: 50px;
   border-radius: 16px;
-  box-shadow: var(--shadow-medium);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
   text-align: center;
   width: 100%;
   max-width: 600px;
@@ -30,7 +30,9 @@
   z-index: 1001;
   max-height: 90vh;
   overflow-y: auto;
-}
+  border-top: 4px solid transparent;
+  border-image: linear-gradient(90deg, #1e90ff, #0066cc, #6a0dad, #c71585, #ff1493) 1;
+}}
 
 @keyframes fadeInFromBottom {
   from {
