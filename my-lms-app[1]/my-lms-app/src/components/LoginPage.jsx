@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './LoginPage.css';
 
 const LoginPage = ({ onLogin, onRegisterClick }) => {
@@ -8,6 +8,7 @@ const LoginPage = ({ onLogin, onRegisterClick }) => {
   const [captchaInput, setCaptchaInput] = useState('');
   const [captchaCode, setCaptchaCode] = useState(generateCaptcha());
   const [captchaError, setCaptchaError] = useState('');
+  const captchaInputRef = useRef(null);
 
   function generateCaptcha() {
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -25,9 +26,10 @@ const LoginPage = ({ onLogin, onRegisterClick }) => {
   };
 
   const handleRefreshCaptcha = () => {
+    // Refresh captcha code but do not automatically clear an existing error;
+    // user should explicitly retry so they see the red retry message.
     setCaptchaCode(generateCaptcha());
     setCaptchaInput('');
-    setCaptchaError('');
   };
 
   const handleLogin = () => {
@@ -43,15 +45,18 @@ const LoginPage = ({ onLogin, onRegisterClick }) => {
 
     if (!captchaInput) {
       setCaptchaError('Please enter the CAPTCHA code.');
+      if (captchaInputRef && captchaInputRef.current) captchaInputRef.current.focus();
       return;
     }
 
     if (captchaInput.toUpperCase() !== captchaCode) {
-      setCaptchaError('Incorrect CAPTCHA. Please try again.');
-      handleRefreshCaptcha();
+      // Keep the error visible and prompt the user to retry.
+      setCaptchaError('Incorrect CAPTCHA. Click "Retry" to try a new code.');
+      if (captchaInputRef && captchaInputRef.current) captchaInputRef.current.focus();
       return;
     }
 
+    // clear error on success
     setCaptchaError('');
     onLogin(selectedRole);
   };
@@ -160,8 +165,14 @@ const LoginPage = ({ onLogin, onRegisterClick }) => {
             <label htmlFor="captcha">Verify you're human</label>
             <div className="captcha-box">
               <div className="captcha-code">{captchaCode}</div>
-              <button type="button" className="captcha-refresh-btn" onClick={handleRefreshCaptcha} title="Refresh CAPTCHA">
-                🔄
+              <button
+                type="button"
+                className={`captcha-refresh-btn ${captchaError ? 'captcha-retry' : ''}`}
+                onClick={handleRefreshCaptcha}
+                title={captchaError ? 'Retry CAPTCHA' : 'Refresh CAPTCHA'}
+                aria-label={captchaError ? 'Retry CAPTCHA' : 'Refresh CAPTCHA'}
+              >
+                {captchaError ? 'Retry' : '🔄'}
               </button>
             </div>
             <input 
@@ -172,6 +183,7 @@ const LoginPage = ({ onLogin, onRegisterClick }) => {
                 setCaptchaInput(e.target.value);
                 setCaptchaError('');
               }} 
+              ref={captchaInputRef}
               placeholder="Enter the code above"
               maxLength="6"
               className="captcha-input"

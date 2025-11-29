@@ -331,6 +331,20 @@
   background: linear-gradient(90deg, #0066cc, #1e90ff);
 }
 
+/* Retry state (shown after a failed CAPTCHA) */
+.captcha-refresh-btn.captcha-retry {
+  background: linear-gradient(90deg, #e74c3c, #c0392b);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.35);
+  transform: none;
+  font-weight: 700;
+}
+
+.captcha-refresh-btn.captcha-retry:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 18px rgba(231, 76, 60, 0.45);
+  background: linear-gradient(90deg, #c0392b, #e74c3c);
+}
+
 .captcha-input {
   width: 100%;
   padding: 0.8rem;
