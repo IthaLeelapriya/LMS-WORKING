@@ -5,11 +5,29 @@ const LoginPage = ({ onLogin, onRegisterClick }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [selectedRole, setSelectedRole] = useState('');
+  const [captchaInput, setCaptchaInput] = useState('');
+  const [captchaCode, setCaptchaCode] = useState(generateCaptcha());
+  const [captchaError, setCaptchaError] = useState('');
+
+  function generateCaptcha() {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let code = '';
+    for (let i = 0; i < 6; i++) {
+      code += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return code;
+  }
 
   const isPasswordValid = (pw) => {
     // At least one uppercase, one lowercase, one digit and one special character
     const re = /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).+/;
     return re.test(pw);
+  };
+
+  const handleRefreshCaptcha = () => {
+    setCaptchaCode(generateCaptcha());
+    setCaptchaInput('');
+    setCaptchaError('');
   };
 
   const handleLogin = () => {
@@ -23,6 +41,18 @@ const LoginPage = ({ onLogin, onRegisterClick }) => {
       return;
     }
 
+    if (!captchaInput) {
+      setCaptchaError('Please enter the CAPTCHA code.');
+      return;
+    }
+
+    if (captchaInput.toUpperCase() !== captchaCode) {
+      setCaptchaError('Incorrect CAPTCHA. Please try again.');
+      handleRefreshCaptcha();
+      return;
+    }
+
+    setCaptchaError('');
     onLogin(selectedRole);
   };
 
@@ -124,6 +154,29 @@ const LoginPage = ({ onLogin, onRegisterClick }) => {
                 <span>📊 Admin</span>
               </label>
             </div>
+          </div>
+
+          <div className="captcha-container">
+            <label htmlFor="captcha">Verify you're human</label>
+            <div className="captcha-box">
+              <div className="captcha-code">{captchaCode}</div>
+              <button type="button" className="captcha-refresh-btn" onClick={handleRefreshCaptcha} title="Refresh CAPTCHA">
+                🔄
+              </button>
+            </div>
+            <input 
+              type="text" 
+              id="captcha" 
+              value={captchaInput} 
+              onChange={(e) => {
+                setCaptchaInput(e.target.value);
+                setCaptchaError('');
+              }} 
+              placeholder="Enter the code above"
+              maxLength="6"
+              className="captcha-input"
+            />
+            {captchaError && <div className="captcha-error">{captchaError}</div>}
           </div>
           
           <button type="submit" className="login-btn">
