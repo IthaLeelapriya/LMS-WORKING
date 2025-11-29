@@ -1,0 +1,136 @@
+.lectures-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 24px;
+}
+
+.lectures-card {
+  width: 900px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(16,24,40,0.08);
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.lectures-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #eef2f6;
+  padding-bottom: 16px;
+}
+
+.lectures-header h2 {
+  margin: 0;
+  color: #1a2332;
+  font-size: 1.6rem;
+}
+
+.close-btn {
+  background: #2d6a86;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.close-btn:hover {
+  background: #1e4d63;
+}
+
+.lectures-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lecture-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px;
+  border: 1px solid #e5e9f2;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #fafcff 0%, #f5f8fd 100%);
+  transition: box-shadow 0.2s;
+}
+
+.lecture-item:hover {
+  box-shadow: 0 4px 12px rgba(45,106,134,0.1);
+}
+
+.lecture-content {
+  flex: 1;
+}
+
+.lecture-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #1a2332;
+  margin-bottom: 4px;
+}
+
+.lecture-course {
+  font-size: 0.9rem;
+  color: #2d6a86;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.lecture-date,
+.lecture-duration {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 2px;
+}
+
+.lecture-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: 16px;
+}
+
+.action-btn {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+  background: var(--primary-brand-color);
+  color: #fff;
+}
+
+.action-btn.primary {
+  background: var(--primary-brand-color);
+  color: #fff;
+}
+
+.action-btn.primary:hover {
+  background: var(--primary-brand-hover);
+  transform: translateY(-1px);
+}
+
+.action-btn.secondary {
+  background: var(--primary-brand-color);
+  color: #fff;
+}
+
+.action-btn.secondary:hover {
+  background: var(--primary-brand-hover);
+}
+
+.no-lectures {
+  text-align: center;
+  color: #999;
+  padding: 40px 20px;
+  font-size: 1.05rem;
+}

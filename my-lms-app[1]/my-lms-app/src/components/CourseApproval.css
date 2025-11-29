@@ -1,0 +1,365 @@
+.course-approval-container {
+  background-color: var(--background-card);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--shadow-medium);
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.approval-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border-light);
+}
+
+.approval-header h2 {
+  color: var(--primary-color);
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.close-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-medium);
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.close-btn:hover {
+  color: var(--text-dark);
+}
+
+.approval-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.filter-section label {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.filter-section select {
+  padding: 8px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  background-color: var(--background-main);
+  color: var(--text-dark);
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease;
+}
+
+.filter-section select:hover {
+  border-color: var(--primary-color);
+}
+
+.filter-section select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(46, 102, 134, 0.1);
+}
+
+.stats {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.stat-item {
+  color: var(--text-medium);
+  font-size: 0.95rem;
+}
+
+.stat-item strong {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.courses-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.no-courses {
+  text-align: center;
+  padding: 3rem;
+  background-color: var(--background-main);
+  border-radius: 8px;
+  color: var(--text-medium);
+}
+
+.no-courses p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.course-card {
+  background-color: var(--background-main);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.course-card:hover {
+  box-shadow: var(--shadow-light);
+  border-color: var(--primary-color);
+}
+
+.course-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.course-info {
+  flex: 1;
+}
+
+.course-info h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--primary-color);
+  font-size: 1.3rem;
+}
+
+.instructor {
+  margin: 0.5rem 0;
+  color: var(--text-medium);
+  font-size: 0.95rem;
+}
+
+.course-meta {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+
+.level-badge,
+.category-badge,
+.duration-badge {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.level-badge {
+  background-color: rgba(46, 102, 134, 0.1);
+  color: var(--primary-color);
+}
+
+.level-badge.beginner {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: var(--success-color);
+}
+
+.level-badge.intermediate {
+  background-color: rgba(255, 193, 7, 0.1);
+  color: var(--warning-color);
+}
+
+.level-badge.advanced {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: var(--danger-color);
+}
+
+.category-badge {
+  background-color: rgba(247, 160, 114, 0.1);
+  color: var(--secondary-color);
+}
+
+.duration-badge {
+  background-color: rgba(92, 98, 107, 0.1);
+  color: var(--text-medium);
+}
+
+.expand-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.3s ease;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.expand-btn:hover {
+  transform: scale(1.1);
+}
+
+.course-details {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background-color: var(--background-card);
+  border-radius: 6px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.description {
+  margin-bottom: 1.5rem;
+}
+
+.description h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-dark);
+  font-size: 1rem;
+}
+
+.description p {
+  margin: 0;
+  color: var(--text-medium);
+  line-height: 1.6;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-item strong {
+  color: var(--text-dark);
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+}
+
+.detail-item p {
+  margin: 0;
+  color: var(--text-medium);
+  font-size: 0.95rem;
+}
+
+.course-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.approve-btn,
+.reject-btn {
+  flex: 1;
+  padding: 0.8rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.approve-btn {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.approve-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.approve-btn:active {
+  transform: translateY(0);
+}
+
+.reject-btn {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.reject-btn:hover {
+  background-color: #da190b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
+}
+
+.reject-btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .approval-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filter-section {
+    width: 100%;
+  }
+
+  .filter-section select {
+    width: 100%;
+  }
+
+  .course-header {
+    flex-direction: column;
+  }
+
+  .expand-btn {
+    align-self: flex-end;
+  }
+
+  .course-actions {
+    flex-direction: column;
+  }
+
+  .details-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .approval-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .close-btn {
+    align-self: flex-end;
+  }
+}

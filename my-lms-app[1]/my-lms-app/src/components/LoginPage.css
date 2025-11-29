@@ -1,0 +1,256 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #dd4dc4 0%, #5d3ee5 50%, #2d5fa8 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: auto;
+  z-index: 1000;
+}
+
+.login-box {
+  background: var(--background-card);
+  padding: 50px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-medium);
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+  animation: fadeInFromBottom 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  z-index: 1001;
+}
+
+@keyframes fadeInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-logo {
+  margin-bottom: 2rem;
+}
+
+.login-logo h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--primary-brand-color);
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.login-logo h2 span {
+  color: var(--secondary-brand-color);
+  margin-left: 5px;
+}
+
+.login-box h2 {
+  font-size: 2.2rem;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.login-box p {
+  color: var(--text-medium);
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.password-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.input-group label {
+  display: block;
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 1rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  background-color: var(--background-main);
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--primary-brand-color);
+  box-shadow: 0 0 0 3px rgba(13, 71, 161, 0.1);
+}
+
+.forgot-password-link {
+  font-size: 0.85rem;
+  color: var(--primary-brand-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.forgot-password-link:hover {
+  color: #082960;
+  text-decoration: underline;
+}
+
+.role-selection {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.role-selection-title {
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.selected-role-name {
+  font-weight: 700;
+  color: var(--primary-brand-color);
+  margin-left: 5px;
+  text-transform: capitalize;
+}
+
+.role-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.role-card {
+  background: var(--background-main);
+  padding: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 2px solid var(--border-light);
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.role-card:hover {
+  border-color: var(--primary-brand-color);
+  box-shadow: 0 4px 10px rgba(13, 71, 161, 0.1);
+}
+
+.role-card.active-role {
+  border-color: var(--primary-brand-color);
+  background-color: rgba(13, 71, 161, 0.08);
+  box-shadow: 0 4px 15px rgba(13, 71, 161, 0.15);
+}
+
+.role-card input[type="radio"] {
+  display: none;
+}
+
+.role-card span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  transition: color 0.3s;
+}
+
+.role-card.active-role span {
+  font-weight: 700;
+  color: var(--primary-brand-color);
+}
+
+.login-btn {
+  width: 100%;
+  padding: 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  background-color: var(--primary-brand-color);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(13, 71, 161, 0.3);
+}
+
+.login-btn:hover {
+  background-color: #082960;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(13, 71, 161, 0.4);
+}
+
+
+/* Password validation warning */
+.password-warning {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  color: #c0392b; /* subtle red */
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.password-warning svg {
+  flex: 0 0 14px;
+  color: #c0392b;
+}
+
+.password-warning span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Register Section */
+.register-section {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: var(--text-medium);
+  font-size: 0.95rem;
+}
+
+.register-section p {
+  margin: 0;
+}
+
+.register-btn-link {
+  background: none;
+  border: none;
+  color: var(--primary-brand-color);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 0;
+  font-size: 0.95rem;
+}
+
+.register-btn-link:hover {
+  color: var(--primary-brand-hover);
+  text-decoration: underline;
+}

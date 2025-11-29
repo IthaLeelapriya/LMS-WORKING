@@ -1,0 +1,164 @@
+.students-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 24px;
+}
+
+.students-card {
+  width: 1000px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(16,24,40,0.08);
+  padding: 20px;
+  margin-top: 24px;
+}
+
+.students-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.students-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #d0d8e5;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.count {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.students-grid {
+  display: flex;
+  gap: 16px;
+}
+
+.students-list {
+  width: 420px;
+  max-height: 520px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.student-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #eef2f6;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  background: #fafcff;
+}
+
+.student-item.selected {
+  border-color: #2d6a86;
+  box-shadow: 0 6px 14px rgba(45,106,134,0.08);
+}
+
+.student-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#2d6a86,#7cb342);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.student-info {
+  flex: 1;
+}
+
+.student-name {
+  font-weight: 700;
+  color: #1a2332;
+}
+
+.student-email {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.student-progress {
+  color: #2d6a86;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.student-detail-panel {
+  flex: 1;
+  min-height: 300px;
+  border: 1px solid #eef2f6;
+  border-radius: 8px;
+  padding: 16px;
+  background: #fff;
+}
+
+.student-placeholder {
+  color: #777;
+  padding: 40px;
+  text-align: center;
+}
+
+.student-detail h3 {
+  margin-top: 0;
+}
+
+.detail-row {
+  margin: 8px 0;
+  color: #333;
+}
+
+.detail-actions {
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn.primary {
+  background: var(--primary-brand-color);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.action-btn {
+  background: var(--primary-brand-color);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.no-students {
+  color: #999;
+  padding: 20px;
+}
+
+.close-btn {
+  background: #2d6a86;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
