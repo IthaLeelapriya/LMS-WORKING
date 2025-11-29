@@ -1,59 +1,62 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Dashboard.css';
+import WriteArticle from './WriteArticle';
 
 const ContentCreatorDashboard = () => {
+  const [showWriteArticle, setShowWriteArticle] = useState(false);
   return (
-    <div className="dashboard-section content-creator-dashboard">
-      <h2>Content Development & Curation Center ✍️</h2>
-      <p>As a **Content Creator**, your mission is to build and maintain high-quality educational content for the platform.</p>
+    <>
+      <div className="dashboard-section content-creator-dashboard">
+        <h2>Content Development & Curation Center ✍️</h2>
+        <p>As a **Content Creator**, your mission is to build and maintain high-quality educational content for the platform.</p>
 
-      <div className="dashboard-grid full-grid">
-        {/* 1. Overview / Home Card */}
-        <div className="dashboard-card overview-card creator-overview">
-          <h3>Overview & Quick Actions</h3>
-          <p className="sub-description">A quick summary of your content's performance and recent activities.</p>
-          <div className="overview-content">
-            <div className="analytics-summary">
-              <h4>Creator Analytics Summary</h4>
-              <p>📊 **Views:** 12,450 | 👍 **Likes:** 1,890 | 💬 **Comments:** 560</p>
-              <p>💰 **Earnings:** $1,250 (This Month)</p>
+        <div className="dashboard-grid full-grid">
+          {/* 1. Overview / Home Card */}
+          <div className="dashboard-card overview-card creator-overview">
+            <h3>Overview & Quick Actions</h3>
+            <p className="sub-description">A quick summary of your content's performance and recent activities.</p>
+            <div className="overview-content">
+              <div className="analytics-summary">
+                <h4>Creator Analytics Summary</h4>
+                <p>📊 **Views:** 12,450 | 👍 **Likes:** 1,890 | 💬 **Comments:** 560</p>
+                <p>💰 **Earnings:** $1,250 (This Month)</p>
+              </div>
+              <div className="recent-activity">
+                <h4>Recent Activity</h4>
+                <p>🔔 New comment on "Intro to AI"</p>
+                <p>🔔 Your course "Web Dev Basics" has been approved</p>
+              </div>
             </div>
-            <div className="recent-activity">
-              <h4>Recent Activity</h4>
-              <p>🔔 New comment on "Intro to AI"</p>
-              <p>🔔 Your course "Web Dev Basics" has been approved</p>
+            <div className="card-actions quick-actions">
+              <button className="action-btn">➕ Upload New Content</button>
+              <button className="action-btn" onClick={() => setShowWriteArticle(true)}>📝 Draft New Article</button>
+              <button className="action-btn">🎥 Record New Video</button>
             </div>
           </div>
-          <div className="card-actions quick-actions">
-            <button className="action-btn">➕ Upload New Content</button>
-            <button className="action-btn">📝 Draft New Article</button>
-            <button className="action-btn">🎥 Record New Video</button>
-          </div>
-        </div>
 
-        {/* 2. Content Management Card */}
-        <div className="dashboard-card">
-          <h3>Content Management</h3>
-          <p>Manage all your creations, from articles and videos to full courses.</p>
-          <div className="card-actions">
-            <button className="action-btn">📂 View My Creations</button>
-            <button className="action-btn">🌐 Publish / Unpublish Content</button>
-            <button className="action-btn">📊 Track Engagement</button>
-            <button className="action-btn">🧩 Manage Content Types</button>
+          {/* 2. Content Management Card */}
+          <div className="dashboard-card">
+            <h3>Content Management</h3>
+            <p>Manage all your creations, from articles and videos to full courses.</p>
+            <div className="card-actions">
+              <button className="action-btn">📂 View My Creations</button>
+              <button className="action-btn">🌐 Publish / Unpublish Content</button>
+              <button className="action-btn">📊 Track Engagement</button>
+              <button className="action-btn">🧩 Manage Content Types</button>
+            </div>
           </div>
-        </div>
 
-        {/* 3. Create Content Card */}
-        <div className="dashboard-card">
-          <h3>Create Content</h3>
-          <p>Use our powerful tools to create and format new educational content.</p>
-          <div className="card-actions">
-            <button className="action-btn">🖼️ Upload Files & Media</button>
-            <button className="action-btn">✍️ Write a New Article</button>
-            <button className="action-btn">🔧 Set Difficulty Level</button>
-            <button className="action-btn">⏳ Save as Draft</button>
+          {/* 3. Create Content Card */}
+          <div className="dashboard-card">
+            <h3>Create Content</h3>
+            <p>Use our powerful tools to create and format new educational content.</p>
+            <div className="card-actions">
+              <button className="action-btn">🖼️ Upload Files & Media</button>
+              <button className="action-btn" onClick={() => setShowWriteArticle(true)}>✍️ Write a New Article</button>
+              <button className="action-btn">🔧 Set Difficulty Level</button>
+              <button className="action-btn">⏳ Save as Draft</button>
+            </div>
           </div>
-        </div>
         
         {/* 4. Collaboration Card */}
         <div className="dashboard-card">
@@ -134,7 +137,10 @@ const ContentCreatorDashboard = () => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+      
+      {showWriteArticle && <WriteArticle onClose={() => setShowWriteArticle(false)} />}
+    </>
   );
 };
 
