@@ -1,167 +1,470 @@
+/* Main Dashboard Container */
 .dashboard-section {
-  padding: 2.5rem 0;
+  padding: 2.5rem 20px;
   background: linear-gradient(135deg, #1e90ff 0%, #0066cc 25%, #6a0dad 50%, #c71585 75%, #ff1493 100%);
   min-height: 100vh;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .dashboard-section h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #000000;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
   text-align: center;
-}
-
-.dashboard-section p {
-  color: #1a1a1a;
-  font-size: 1.1rem;
-  margin-bottom: 2.5rem;
-  text-align: center;
-  max-width: 800px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
 
+.dashboard-section p {
+  color: #1a1a1a;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid Container - Centered and Responsive */
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-  margin-top: 2rem;
+  gap: 1.8rem;
+  margin-top: 1.5rem;
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* Individual Cards */
 .dashboard-card {
   background-color: var(--background-card);
-  border-radius: 16px;
-  padding: 2.5rem;
-  box-shadow: var(--shadow-light);
-  border-left: 6px solid; /* Thinner accent border */
-  transition: all 0.3s ease;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-height: 280px;
 }
 
 .dashboard-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
-/* New Role-specific colors for card borders */
-.admin-dashboard .dashboard-card { border-color: var(--danger-color); }
-.instructor-dashboard .dashboard-card { border-color: var(--warning-color); }
-.student-dashboard .dashboard-card { border-color: var(--success-color); }
-.content-creator-dashboard .dashboard-card { border-color: var(--info-color); }
+/* Role-specific border colors */
+.admin-dashboard .dashboard-card { 
+  border-color: #e74c3c; 
+}
 
+.instructor-dashboard .dashboard-card { 
+  border-color: #f39c12; 
+}
+
+.student-dashboard .dashboard-card { 
+  border-color: #27ae60; 
+}
+
+.content-creator-dashboard .dashboard-card { 
+  border-color: #3498db; 
+}
 
 .dashboard-card h3 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: #000000;
   margin-top: 0;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.6rem;
   font-weight: 600;
+  line-height: 1.4;
 }
 
 .dashboard-card p {
   color: #1a1a1a;
-  font-size: 1rem;
+  font-size: 0.95rem;
   margin-bottom: 1.5rem;
   text-align: left;
   flex-grow: 1;
+  line-height: 1.5;
 }
 
 .card-actions {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
   margin-top: auto;
 }
 
 .action-btn {
   width: 100%;
-  padding: 15px;
-  font-size: 1rem;
+  padding: 11px 16px;
+  font-size: 0.9rem;
   font-weight: 600;
-  background-color: var(--primary-brand-color);
+  background-color: #2d5f7d;
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .action-btn:hover {
-  background-color: var(--primary-brand-hover);
+  background-color: #1f3d52;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.action-btn:active {
+  transform: translateY(0px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .upload-btn {
-  background-color: var(--success-color) !important;
+  background-color: #27ae60 !important;
   color: white;
 }
 
 .upload-btn:hover {
-  background-color: #388e3c !important;
+  background-color: #1e8449 !important;
 }
 
 .card-actions label.upload-btn input[type="file"] {
-    display: none;
+  display: none;
 }
-/* Add these new styles to your existing Dashboard.css */
 
+/* ========== STUDENT DASHBOARD ========== */
 .dashboard-section.student-dashboard .dashboard-grid {
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.8rem;
 }
 
 .overview-card {
-  grid-column: 1 / -1; /* This makes the card span the entire width of the grid */
+  grid-column: 1 / -1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 3rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  padding: 2.5rem;
+  background-color: var(--background-card) !important;
+  border-left: 5px solid #27ae60 !important;
+  margin-bottom: 0.5rem;
 }
 
 .overview-card h3 {
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #000000;
+  margin: 0 0 0.3rem 0;
 }
 
 .overview-card .sub-description {
   font-style: normal;
-  color: var(--text-medium);
-  margin-bottom: 2rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
 }
 
 .overview-content {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   width: 100%;
 }
 
-@media (min-width: 768px) {
-  .overview-content {
-    flex-direction: row;
-    justify-content: space-around;
-    gap: 4rem;
-  }
-}
-
 .progress-bar-container {
   flex: 1;
-  text-align: left;
 }
 
 .progress-bar-container h4 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #000000;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}
+
+.progress-bar-item {
+  margin-bottom: 1.2rem;
+}
+
+.progress-bar-item span {
+  font-size: 0.85rem;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #27ae60, #2ecc71);
+  transition: width 0.5s ease-in-out;
+}
+
+.quick-info {
+  flex: 1;
+}
+
+.quick-info h4 {
+  font-size: 1.1rem;
+  color: #000000;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}
+
+.quick-info p {
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  line-height: 1.6;
+  margin: 0 0 0.8rem 0;
+}
+
+/* ========== INSTRUCTOR DASHBOARD ========== */
+.dashboard-section.instructor-dashboard .dashboard-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.8rem;
+}
+
+.overview-card.instructor-overview {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  padding: 2.5rem;
+  background-color: var(--background-card) !important;
+  border-left: 5px solid #f39c12 !important;
+  margin-bottom: 0.5rem;
+}
+
+.overview-card.instructor-overview h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 0.3rem 0;
+}
+
+.overview-card.instructor-overview .sub-description {
+  font-style: normal;
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+/* ========== CONTENT CREATOR DASHBOARD ========== */
+.dashboard-section.content-creator-dashboard .dashboard-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.8rem;
+}
+
+.overview-card.creator-overview {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  padding: 2.5rem;
+  background-color: var(--background-card) !important;
+  border-left: 5px solid #3498db !important;
+  margin-bottom: 0.5rem;
+}
+
+.overview-card.creator-overview h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 0.3rem 0;
+}
+
+.overview-card.creator-overview .sub-description {
+  font-style: normal;
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.analytics-summary, 
+.recent-activity {
+  flex: 1;
+}
+
+.analytics-summary h4, 
+.recent-activity h4 {
+  font-size: 1.1rem;
+  color: #000000;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}
+
+.analytics-summary p, 
+.recent-activity p {
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  line-height: 1.6;
+  margin: 0 0 0.8rem 0;
+}
+
+/* ========== ADMIN DASHBOARD ========== */
+.dashboard-section.admin-dashboard .dashboard-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.8rem;
+}
+
+.overview-card.admin-overview {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  padding: 2.5rem;
+  background-color: var(--background-card) !important;
+  border-left: 5px solid #e74c3c !important;
+  margin-bottom: 0.5rem;
+}
+
+.overview-card.admin-overview h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 0.3rem 0;
+}
+
+.overview-card.admin-overview .sub-description {
+  font-style: normal;
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 1024px) {
+  .dashboard-section {
+    padding: 2rem 15px;
+  }
+
+  .dashboard-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .dashboard-grid {
+    gap: 1.5rem;
+  }
+
+  .dashboard-card {
+    padding: 1.8rem;
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-section {
+    padding: 1.5rem 12px;
+  }
+
+  .dashboard-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .dashboard-section p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .dashboard-card {
+    padding: 1.5rem;
+    min-height: auto;
+  }
+
+  .overview-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .action-btn {
+    padding: 10px 14px;
+    font-size: 0.85rem;
+  }
+
+  .overview-card,
+  .overview-card.instructor-overview,
+  .overview-card.creator-overview,
+  .overview-card.admin-overview {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-section {
+    padding: 1rem 10px;
+  }
+
+  .dashboard-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .dashboard-grid {
+    gap: 1rem;
+  }
+
+  .dashboard-card {
+    padding: 1.2rem;
+    border-left-width: 4px;
+    min-height: auto;
+  }
+
+  .dashboard-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .card-actions {
+    gap: 10px;
+  }
+
+  .action-btn {
+    padding: 9px 12px;
+    font-size: 0.8rem;
+  }
+
+  .overview-card,
+  .overview-card.instructor-overview,
+  .overview-card.creator-overview,
+  .overview-card.admin-overview {
+    padding: 1.5rem;
+  }
+
+  .overview-card h3,
+  .overview-card.instructor-overview h3,
+  .overview-card.creator-overview h3,
+  .overview-card.admin-overview h3 {
+    font-size: 1.3rem;
+  }
 }
 
 .progress-bar-item {
