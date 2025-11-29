@@ -7,14 +7,14 @@
 
 .dashboard-section h2 {
   font-size: 2.5rem;
-  color: var(--text-dark);
+  color: #000000;
   font-weight: 700;
   margin-bottom: 1.5rem;
   text-align: center;
 }
 
 .dashboard-section p {
-  color: var(--text-medium);
+  color: #1a1a1a;
   font-size: 1.1rem;
   margin-bottom: 2.5rem;
   text-align: center;
@@ -56,14 +56,14 @@
 
 .dashboard-card h3 {
   font-size: 1.8rem;
-  color: var(--text-dark);
+  color: #000000;
   margin-top: 0;
   margin-bottom: 0.8rem;
   font-weight: 600;
 }
 
 .dashboard-card p {
-  color: var(--text-medium);
+  color: #1a1a1a;
   font-size: 1rem;
   margin-bottom: 1.5rem;
   text-align: left;
@@ -129,6 +129,7 @@
 .overview-card h3 {
   font-size: 2.2rem;
   font-weight: 700;
+  color: #000000;
 }
 
 .overview-card .sub-description {
@@ -159,7 +160,7 @@
 
 .progress-bar-container h4 {
   font-size: 1.2rem;
-  color: var(--text-dark);
+  color: #000000;
   margin-bottom: 1rem;
 }
 
@@ -195,13 +196,13 @@
 
 .quick-info h4 {
   font-size: 1.2rem;
-  color: var(--text-dark);
+  color: #000000;
   margin-bottom: 1rem;
 }
 
 .quick-info p {
   font-size: 1rem;
-  color: var(--text-medium);
+  color: #1a1a1a;
   text-align: left;
   line-height: 1.8;
   margin: 0;
@@ -236,7 +237,7 @@
 .overview-card.creator-overview h3 {
   font-size: 2.2rem;
   font-weight: 700;
-  color: var(--text-dark);
+  color: #000000;
 }
 
 .overview-card.creator-overview .sub-description {
@@ -267,13 +268,13 @@
 
 .analytics-summary h4, .recent-activity h4 {
   font-size: 1.2rem;
-  color: var(--text-dark);
+  color: #000000;
   margin-bottom: 1rem;
 }
 
 .analytics-summary p {
   font-size: 1rem;
-  color: var(--text-medium);
+  color: #1a1a1a;
   line-height: 1.6;
   margin: 0;
 }
@@ -299,7 +300,7 @@
 .overview-card.admin-overview h3 {
   font-size: 2.2rem;
   font-weight: 700;
-  color: var(--text-dark);
+  color: #000000;
 }
 
 .overview-card.admin-overview .sub-description {

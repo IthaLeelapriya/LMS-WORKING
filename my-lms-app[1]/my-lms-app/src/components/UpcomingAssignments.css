@@ -61,11 +61,11 @@
 
 .assignment-title {
   font-weight: 600;
-  color: var(--text-dark);
+  color: #000000;
 }
 
 .assignment-meta {
-  color: var(--text-medium);
+  color: #1a1a1a;
   font-size: 0.95rem;
 }
 

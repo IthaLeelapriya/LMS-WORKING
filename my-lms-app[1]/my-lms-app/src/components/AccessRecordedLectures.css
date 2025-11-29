@@ -27,7 +27,7 @@
 
 .lectures-header h2 {
   margin: 0;
-  color: var(--text-dark);
+  color: #000000;
   font-size: 1.6rem;
 }
 
@@ -75,13 +75,13 @@
 .lecture-title {
   font-weight: 700;
   font-size: 1.05rem;
-  color: var(--text-dark);
+  color: #000000;
   margin-bottom: 4px;
 }
 
 .lecture-course {
   font-size: 0.9rem;
-  color: var(--primary-brand-color);
+  color: #1a1a1a;
   font-weight: 500;
   margin-bottom: 6px;
 }
@@ -89,7 +89,7 @@
 .lecture-date,
 .lecture-duration {
   font-size: 0.85rem;
-  color: var(--text-medium);
+  color: #1a1a1a;
   margin-bottom: 2px;
 }
 
