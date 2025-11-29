@@ -56,7 +56,7 @@ body {
   font-family: 'Inter', 'Segoe UI', sans-serif;
   line-height: 1.6;
   color: var(--text-dark);
-  background-color: var(--background-main);
+  background: linear-gradient(135deg, var(--background-main) 0%, #f0f4f8 50%, #e8f0f6 100%);
   margin: 0;
   display: flex;
   min-height: 100vh;
@@ -143,6 +143,6 @@ body {
 
 .dashboard-main {
   min-height: 400px;
-  background-color: var(--background-main);
+  background: linear-gradient(135deg, var(--background-main) 0%, #f0f4f8 50%, #e8f0f6 100%);
   width: 100%;
 }

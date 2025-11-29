@@ -1,6 +1,6 @@
 .dashboard-section {
   padding: 2.5rem 0;
-  background-color: var(--background-main);
+  background: linear-gradient(135deg, var(--background-main) 0%, #f0f4f8 50%, #e8f0f6 100%);
   min-height: 100vh;
   width: 100%;
 }
