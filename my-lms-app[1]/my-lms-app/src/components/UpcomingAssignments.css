@@ -3,13 +3,15 @@
   justify-content: center;
   align-items: flex-start;
   padding: 24px;
+  background-color: var(--background-main);
+  min-height: 100vh;
 }
 
 .upcoming-card {
   width: 820px;
-  background: #fff;
+  background: var(--background-card);
   border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(16,24,40,0.08);
+  box-shadow: var(--shadow-medium);
   padding: 20px;
   margin-top: 24px;
 }
@@ -22,12 +24,17 @@
 }
 
 .close-btn {
-  background: #2d6a86;
+  background: var(--primary-brand-color);
   color: #fff;
   border: none;
   padding: 8px 12px;
   border-radius: 6px;
   cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.close-btn:hover {
+  background: var(--primary-brand-hover);
 }
 
 .assignment-list {
@@ -41,18 +48,24 @@
   justify-content: space-between;
   align-items: center;
   padding: 14px;
-  border: 1px solid #eef2f6;
+  border: 1px solid var(--border-light);
   border-radius: 8px;
   margin-bottom: 10px;
-  background: #fafcff;
+  background: linear-gradient(135deg, var(--background-main) 0%, rgba(255,255,255,0.5) 100%);
+  transition: box-shadow 0.2s ease;
+}
+
+.assignment-item:hover {
+  box-shadow: var(--shadow-light);
 }
 
 .assignment-title {
   font-weight: 600;
+  color: var(--text-dark);
 }
 
 .assignment-meta {
-  color: #666;
+  color: var(--text-medium);
   font-size: 0.95rem;
 }
 
@@ -62,5 +75,9 @@
 }
 
 .no-assign {
-  color: #555;
+  color: var(--text-medium);
+  background-color: var(--background-card);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
 }

@@ -3,13 +3,15 @@
   justify-content: center;
   align-items: flex-start;
   padding: 24px;
+  background-color: var(--background-main);
+  min-height: 100vh;
 }
 
 .badges-card {
   width: 950px;
-  background: #fff;
+  background: var(--background-card);
   border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(16,24,40,0.08);
+  box-shadow: var(--shadow-medium);
   padding: 24px;
   margin-top: 24px;
 }
@@ -19,29 +21,29 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
-  border-bottom: 2px solid #eef2f6;
+  border-bottom: 2px solid var(--border-light);
   padding-bottom: 16px;
 }
 
 .badges-header h2 {
   margin: 0;
-  color: #1a2332;
+  color: var(--text-dark);
   font-size: 1.6rem;
 }
 
 .close-btn {
-  background: #2d6a86;
+  background: var(--primary-brand-color);
   color: #fff;
   border: none;
   padding: 10px 16px;
   border-radius: 6px;
   cursor: pointer;
   font-weight: 500;
-  transition: background 0.2s;
+  transition: background 0.3s ease;
 }
 
 .close-btn:hover {
-  background: #1e4d63;
+  background: var(--primary-brand-hover);
 }
 
 /* Badges Stats */
@@ -53,8 +55,8 @@
 }
 
 .stat-item {
-  background: linear-gradient(135deg, #fafcff 0%, #f5f8fd 100%);
-  border: 1px solid #e5e9f2;
+  background: linear-gradient(135deg, var(--background-main) 0%, rgba(255,255,255,0.5) 100%);
+  border: 1px solid var(--border-light);
   border-radius: 8px;
   padding: 16px;
   text-align: center;
@@ -63,13 +65,13 @@
 .stat-number {
   font-size: 2rem;
   font-weight: 700;
-  color: #2d6a86;
+  color: var(--primary-brand-color);
   margin-bottom: 4px;
 }
 
 .stat-label {
   font-size: 0.85rem;
-  color: #666;
+  color: var(--text-medium);
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -83,9 +85,9 @@
 }
 
 .badge-card {
-  background: linear-gradient(135deg, #fafcff 0%, #f5f8fd 100%);
-  border: 2px solid #e5e9f2;
-  border-top: 4px solid #2d6a86;
+  background: linear-gradient(135deg, var(--background-main) 0%, rgba(255,255,255,0.5) 100%);
+  border: 2px solid var(--border-light);
+  border-top: 4px solid var(--primary-brand-color);
   border-radius: 8px;
   padding: 20px;
   text-align: center;
@@ -95,7 +97,7 @@
 
 .badge-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(45,106,134,0.15);
+  box-shadow: var(--shadow-light);
 }
 
 .badge-icon {

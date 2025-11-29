@@ -3,13 +3,15 @@
   justify-content: center;
   align-items: flex-start;
   padding: 24px;
+  background-color: var(--background-main);
+  min-height: 100vh;
 }
 
 .lectures-card {
   width: 900px;
-  background: #fff;
+  background: var(--background-card);
   border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(16,24,40,0.08);
+  box-shadow: var(--shadow-medium);
   padding: 24px;
   margin-top: 24px;
 }
@@ -19,29 +21,29 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
-  border-bottom: 2px solid #eef2f6;
+  border-bottom: 2px solid var(--border-light);
   padding-bottom: 16px;
 }
 
 .lectures-header h2 {
   margin: 0;
-  color: #1a2332;
+  color: var(--text-dark);
   font-size: 1.6rem;
 }
 
 .close-btn {
-  background: #2d6a86;
+  background: var(--primary-brand-color);
   color: #fff;
   border: none;
   padding: 10px 16px;
   border-radius: 6px;
   cursor: pointer;
   font-weight: 500;
-  transition: background 0.2s;
+  transition: background 0.3s ease;
 }
 
 .close-btn:hover {
-  background: #1e4d63;
+  background: var(--primary-brand-hover);
 }
 
 .lectures-list {
@@ -55,15 +57,15 @@
   justify-content: space-between;
   align-items: flex-start;
   padding: 16px;
-  border: 1px solid #e5e9f2;
+  border: 1px solid var(--border-light);
   border-radius: 8px;
   margin-bottom: 12px;
-  background: linear-gradient(135deg, #fafcff 0%, #f5f8fd 100%);
-  transition: box-shadow 0.2s;
+  background: linear-gradient(135deg, var(--background-main) 0%, rgba(255,255,255,0.5) 100%);
+  transition: box-shadow 0.3s ease;
 }
 
 .lecture-item:hover {
-  box-shadow: 0 4px 12px rgba(45,106,134,0.1);
+  box-shadow: var(--shadow-light);
 }
 
 .lecture-content {
@@ -73,13 +75,13 @@
 .lecture-title {
   font-weight: 700;
   font-size: 1.05rem;
-  color: #1a2332;
+  color: var(--text-dark);
   margin-bottom: 4px;
 }
 
 .lecture-course {
   font-size: 0.9rem;
-  color: #2d6a86;
+  color: var(--primary-brand-color);
   font-weight: 500;
   margin-bottom: 6px;
 }
@@ -87,7 +89,7 @@
 .lecture-date,
 .lecture-duration {
   font-size: 0.85rem;
-  color: #666;
+  color: var(--text-medium);
   margin-bottom: 2px;
 }
 

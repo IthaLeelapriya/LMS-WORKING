@@ -3,13 +3,15 @@
   justify-content: center;
   align-items: flex-start;
   padding: 24px;
+  background-color: var(--background-main);
+  min-height: 100vh;
 }
 
 .progress-card {
   width: 950px;
-  background: #fff;
+  background: var(--background-card);
   border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(16,24,40,0.08);
+  box-shadow: var(--shadow-medium);
   padding: 24px;
   margin-top: 24px;
 }
@@ -19,29 +21,29 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
-  border-bottom: 2px solid #eef2f6;
+  border-bottom: 2px solid var(--border-light);
   padding-bottom: 16px;
 }
 
 .progress-header h2 {
   margin: 0;
-  color: #1a2332;
+  color: var(--text-dark);
   font-size: 1.6rem;
 }
 
 .close-btn {
-  background: #2d6a86;
+  background: var(--primary-brand-color);
   color: #fff;
   border: none;
   padding: 10px 16px;
   border-radius: 6px;
   cursor: pointer;
   font-weight: 500;
-  transition: background 0.2s;
+  transition: background 0.3s ease;
 }
 
 .close-btn:hover {
-  background: #1e4d63;
+  background: var(--primary-brand-hover);
 }
 
 /* Summary Stats Grid */
@@ -53,8 +55,8 @@
 }
 
 .stat-box {
-  background: linear-gradient(135deg, #fafcff 0%, #f5f8fd 100%);
-  border: 1px solid #e5e9f2;
+  background: linear-gradient(135deg, var(--background-main) 0%, rgba(255,255,255,0.5) 100%);
+  border: 1px solid var(--border-light);
   border-radius: 8px;
   padding: 16px;
   text-align: center;
@@ -62,7 +64,7 @@
 
 .stat-label {
   font-size: 0.85rem;
-  color: #666;
+  color: var(--text-medium);
   margin-bottom: 8px;
   text-transform: uppercase;
   font-weight: 600;
@@ -71,13 +73,13 @@
 .stat-value {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #2d6a86;
+  color: var(--primary-brand-color);
 }
 
 /* Chart Container */
 .chart-container {
-  background: #fafcff;
-  border: 1px solid #eef2f6;
+  background: var(--background-main);
+  border: 1px solid var(--border-light);
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 24px;
@@ -85,7 +87,7 @@
 
 .chart-container h3 {
   margin: 0 0 16px 0;
-  color: #1a2332;
+  color: var(--text-dark);
   font-size: 1.1rem;
 }
 
@@ -93,7 +95,7 @@
   width: 100%;
   max-width: 100%;
   border-radius: 4px;
-  background: #fff;
+  background: var(--background-card);
 }
 
 /* Course Progress */
@@ -103,7 +105,7 @@
 
 .course-progress h3 {
   margin: 0 0 16px 0;
-  color: #1a2332;
+  color: var(--text-dark);
   font-size: 1.1rem;
 }
 
@@ -122,14 +124,14 @@
 .course-name {
   width: 250px;
   font-weight: 600;
-  color: #1a2332;
+  color: var(--text-dark);
   font-size: 0.95rem;
 }
 
 .progress-bar {
   flex: 1;
   height: 24px;
-  background: #eef2f6;
+  background: var(--border-light);
   border-radius: 12px;
   overflow: hidden;
   min-width: 200px;
@@ -146,6 +148,7 @@
   color: #fff;
   font-size: 0.75rem;
   font-weight: 700;
+  background: linear-gradient(90deg, var(--primary-brand-color), var(--success-color));
 }
 
 .progress-value {
