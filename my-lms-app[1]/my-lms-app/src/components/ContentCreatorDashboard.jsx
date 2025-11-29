@@ -4,6 +4,7 @@ import WriteArticle from './WriteArticle';
 
 const ContentCreatorDashboard = () => {
   const [showWriteArticle, setShowWriteArticle] = useState(false);
+  const [showContentManagement, setShowContentManagement] = useState(false);
   return (
     <>
       <div className="dashboard-section content-creator-dashboard">
@@ -29,7 +30,8 @@ const ContentCreatorDashboard = () => {
             </div>
             <div className="card-actions quick-actions">
               <button className="action-btn">➕ Upload New Content</button>
-              <button className="action-btn" onClick={() => setShowWriteArticle(true)}>📝 Draft New Article</button>
+                <button className="action-btn" onClick={() => setShowContentManagement(true)}>📂 Upload New Content</button>
+                <button className="action-btn" onClick={() => setShowWriteArticle(true)}>📝 Draft New Article</button>
               <button className="action-btn">🎥 Record New Video</button>
             </div>
           </div>
@@ -39,9 +41,9 @@ const ContentCreatorDashboard = () => {
             <h3>Content Management</h3>
             <p>Manage all your creations, from articles and videos to full courses.</p>
             <div className="card-actions">
-              <button className="action-btn">📂 View My Creations</button>
-              <button className="action-btn">🌐 Publish / Unpublish Content</button>
-              <button className="action-btn">📊 Track Engagement</button>
+                <button className="action-btn" onClick={() => setShowContentManagement(true)}>📂 View My Creations</button>
+                <button className="action-btn" onClick={() => setShowContentManagement(true)}>🌐 Manage Content</button>
+                <button className="action-btn" onClick={() => setShowContentManagement(true)}>📊 Track Engagement</button>
               <button className="action-btn">🧩 Manage Content Types</button>
             </div>
           </div>
@@ -51,7 +53,7 @@ const ContentCreatorDashboard = () => {
             <h3>Create Content</h3>
             <p>Use our powerful tools to create and format new educational content.</p>
             <div className="card-actions">
-              <button className="action-btn">🖼️ Upload Files & Media</button>
+                <button className="action-btn" onClick={() => setShowContentManagement(true)}>🖼️ Upload Files & Media</button>
               <button className="action-btn" onClick={() => setShowWriteArticle(true)}>✍️ Write a New Article</button>
               <button className="action-btn">🔧 Set Difficulty Level</button>
               <button className="action-btn">⏳ Save as Draft</button>
@@ -140,6 +142,7 @@ const ContentCreatorDashboard = () => {
       </div>
       
       {showWriteArticle && <WriteArticle onClose={() => setShowWriteArticle(false)} />}
+      {showContentManagement && <ContentManagement onClose={() => setShowContentManagement(false)} />}
     </>
   );
 };
