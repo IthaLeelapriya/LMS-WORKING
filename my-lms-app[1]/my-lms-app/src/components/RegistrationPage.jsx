@@ -172,6 +172,7 @@ const RegistrationPage = ({ onRegistrationComplete, onBackToLogin }) => {
   return (
     <div className="registration-container">
       <div className="registration-box">
+        <button type="button" className="back-btn" onClick={onBackToLogin} aria-label="Back to login">← Back</button>
         <div className="registration-header">
           <h2>Create Your Account</h2>
           <p>Join our learning community</p>

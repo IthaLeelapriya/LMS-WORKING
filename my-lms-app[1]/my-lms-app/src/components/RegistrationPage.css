@@ -69,6 +69,27 @@
   text-align: center;
 }
 
+/* Top-left back button inside registration box */
+.back-btn {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: none;
+  border: none;
+  color: var(--text-dark);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: all 0.15s ease;
+}
+
+.back-btn:hover {
+  background: rgba(0,0,0,0.04);
+  transform: translateY(-1px);
+}
+
 .registration-header h2 {
   font-size: 2.2rem;
   color: var(--text-dark);
